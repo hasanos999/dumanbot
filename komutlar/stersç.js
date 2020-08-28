@@ -27,7 +27,7 @@ exports.run = async (client, message) => {
 exports.conf = {
   enabled: true, 
   guildOnly: false, 
-  aliases: ["stresçarkı"],
+  aliases: ["stresçarkı",'The Wheel of Stress'],
   permLevel: 0 ,
   kategori: "kullanıcı"
 };

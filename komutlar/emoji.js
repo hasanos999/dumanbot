@@ -32,7 +32,7 @@ const mapping = {
 
 exports.run = (bot, msg, args) => {
     if (args.length < 1) {
-        throw '**Bir mesaj belirt**';
+        throw '**Enter Message**';
     }
 
     msg.channel.send(
@@ -46,7 +46,7 @@ exports.run = (bot, msg, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["emojiyazı"],
+  aliases: ["emoji font","emojiyazı",'Emoji Text'],
   permLevel: 0,
     kategori: ""
 };

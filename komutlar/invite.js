@@ -6,9 +6,8 @@ exports.run = (client, message, args) => {
   message.channel.createInvite({maxAge: 0}).then(invite => {
     let embed = new Discord.RichEmbed()
     .setColor('0xff7700')
-    .setTitle('Davet Oluşturuldu')
+    .setTitle('Invitation Created')
     .setDescription(`${invite}`)
-    .setFooter(`${message.author.tag} Tarafından İstendi.`,message.author.avatarURL)
     message.channel.send(embed);
   });
 }
@@ -21,7 +20,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'davet',
+  name: 'Invitation',
   description: 'davet oluşturur',
   usage: '.davetoluştur'
 };

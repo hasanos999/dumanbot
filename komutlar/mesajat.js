@@ -7,15 +7,15 @@ exports.run = (client, message, args) => {
   .setColor(0xFF0000)
   .setTimestamp()
   .setAuthor(message.author.username, message.author.avatarURL)
-  .addField('? Uyari ?', 'Bu  komutu ozel mesajlarda kullanamazsin.');
+  .addField('Uyari', 'You cannot use this command in private messages..');
   return message.author.sendEmbed(ozelmesajuyari); }
   let guild = message.guild;
   let reason = args.slice(1).join(' ');
   let user = message.mentions.users.first();
   if (message.mentions.users.size < 1) return message.reply('Kime Mesaj atıcam.').catch(console.error);
-  if (reason.length < 1) return message.reply('Ne gondericem.');
+  if (reason.length < 1) return message.reply('What will I send.');
   message.delete();
-  message.reply('Mesajini Gonderdim.').then(msg => msg.delete(2000))
+  message.reply('I sent a message.').then(msg => msg.delete(2000))
   const embed = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setTitle(``)
@@ -27,13 +27,13 @@ exports.run = (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['pm','dm'],
+  aliases: ['pm','dmgönder'],
   permlevel: 1,
    
 };
 
 exports.help = {
-  name: 'dmgönder',
+  name: 'senddm',
   description: 'Bir kullaniciya ozel mesaj yollar.',
   usage: 'mesajat'
 };

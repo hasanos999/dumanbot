@@ -5,7 +5,7 @@ const fs = require('fs')
 exports.run = async (client, message, args) => {
         if(!args[0]) {
                 const embed = new Discord.RichEmbed()
-                        .setDescription(`Lütfen geçerli bir sayı belirtiniz!`)
+                        .setDescription(`Please specify a valid number!`)
                         .setColor("RANDOM")
                         .setTimestamp()
                 message.channel.send({embed})
@@ -18,13 +18,13 @@ exports.run = async (client, message, args) => {
   .setDescription('Sayaç kanalı belirtmelisiniz!')
   .setColor("RANDOM")
                         .setTimestamp()
-  if (!mentionedChannel && args[0] !== "sıfırla") return message.channel.send(s1);
+  if (!mentionedChannel && args[0] !== "reset") return message.channel.send(s1);
  
  
-        if(args[0] === "sıfırla") {
+        if(args[0] === "reset") {
                 if(!profil[message.guild.id]) {
                         const embed = new Discord.RichEmbed()
-                                .setDescription(`Sayaç, ayarlanmadığından dolayı sıfırlanamaz!`)
+                                .setDescription(`First turn on the counter`)
                                 .setColor("RANDOM")
                                 .setTimestamp()
                         message.channel.send({embed})
@@ -35,7 +35,7 @@ exports.run = async (client, message, args) => {
                         console.log(err)
                 })
                 const embed = new Discord.RichEmbed()
-                        .setDescription(`Sayaç, başarılı bir şekilde sıfırlandı!`)
+                        .setDescription(`Completed`)
                         .setColor("RANDOM")
                         .setTimestamp()
                 message.channel.send({embed})
@@ -44,7 +44,7 @@ exports.run = async (client, message, args) => {
  
         if(isNaN(args[0])) {
                 const embed = new Discord.RichEmbed()
-                        .setDescription(`Lütfen, geçerli bir sayı belirtiniz!`)
+                        .setDescription(`Please specify a valid number!`)
                         .setColor("RANDOM")
                         .setTimestamp()
                 message.channel.send({embed})
@@ -53,7 +53,7 @@ exports.run = async (client, message, args) => {
  
         if(args[0] <= message.guild.memberCount) {
                 const embed = new Discord.RichEmbed()
-                        .setDescription(`Lütfen, [${message.guild.memberCount}] rakamlı sayıdan daha yüksek bir değer belirtiniz!`)
+                        .setDescription(`Please Specify A Number Greater Than Zero`)
                         .setColor("RANDOM")
                         .setTimestamp()
                 message.channel.send({embed})
@@ -75,8 +75,7 @@ exports.run = async (client, message, args) => {
         })
  
         const embed = new Discord.RichEmbed()
-                .setDescription(`Sayaç, başarılı bir şekilde \`${args[0]}\` olarak ayarlandı, sayaç kanalı ise ${mentionedChannel} olarak ayarlandı!`)
-                .setFooter('Voxy, iyi eğlenceler diler!', client.user.avatarURL)
+                .setDescription(`Compeleted`)
                 .setColor("RANDOM")
                 .setTimestamp()
         message.channel.send({embed})
@@ -85,13 +84,13 @@ exports.run = async (client, message, args) => {
 exports.conf = {
         enabled: true,
         guildOnly: true,
-        aliases: ['sayaç-ayarla'],
+        aliases: ['sayaç ayarla'],
         permLevel: 2,
         
 }
  
 exports.help = {
-        name: 'sayaç',
+        name: 'set counter',
         description: 'Sayaç, ayarlar!',
         usage: 'sayaç-ayarla [sayı/sıfırla] [kanal]'
 }

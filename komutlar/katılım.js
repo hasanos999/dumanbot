@@ -25,14 +25,14 @@ message.channel.send(Mesaj)
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['bilgi'],
+  aliases: ['kapalı'],
   permLevel: 0,
  
   
 }
 
 exports.help = {
-  name: 'bilgi',
+  name: 'kapalı',
 
 }
 

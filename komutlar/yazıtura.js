@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 
 var hd = [
     "Tura",
+    "Yazı",
     
 ];
 
@@ -13,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["yazıtura"],
+  aliases: ["yazıtura",'Yazı Tura'],
   permLevel: 0,
   kategori: "kullanıcı"
 };

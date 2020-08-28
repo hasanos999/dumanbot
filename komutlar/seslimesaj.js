@@ -6,10 +6,10 @@ exports.run = (client, message) => {
       const args = message.content.slice(prefix.length).split(' ');
     const command = args.shift().toLowerCase();
     const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) return message.channel.send(`İlk önce bir sesli kanala girmeniz gerek`)
+    if (!voiceChannel) return message.channel.send(`First you need to enter an audio channel.`)
     google(`${args.slice(' ')}`, 'tr', 1).then(url => {
         message.member.voiceChannel.join().then(connection => {
-            message.channel.send(`**${args.slice(' ')}** adlı mesaj sesli olarak söyleniyor`)
+            message.channel.send(`Completed`)
             connection.playStream(url).on("end", () => {
                 connection.disconnect();
             })
@@ -19,7 +19,7 @@ exports.run = (client, message) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ["söyle"],
+    aliases: ["söyle",'Say it'],
     permLevel: 1,
   kategori: "kullanıcı"
 };

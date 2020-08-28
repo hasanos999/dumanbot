@@ -5,9 +5,8 @@ exports.run = async (client, message, args) => {
   	let sunucuyaözelayarlarOtorol = JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
 		if(!sunucuyaözelayarlarOtorol[message.guild.id]) {
 			const embed = new Discord.RichEmbed()
-				.setDescription(`Otorolü Ayarlamadığın İçin Kapatamazsın!`)
+				.setDescription(`Set Auto Role First`)
 				.setColor("RED")
-				.setTimestamp('Ayarlamak İçin +otorol @roladi')
 			message.channel.send({embed})
 			return
 		}
@@ -18,7 +17,7 @@ exports.run = async (client, message, args) => {
 
 		})
 		const embed = new Discord.RichEmbed()
-			.setDescription(`Otorol Mesajları Başarıyla Kapatıldı`)
+			.setDescription(`Completed`)
 			.setColor("RANDOM")
 			.setTimestamp()
 		message.channel.send({embed})
@@ -31,13 +30,13 @@ exports.run = async (client, message, args) => {
 exports.conf = {
   enabled: true, 
   guildOnly: false, 
-  aliases: [],
+  aliases: ["otorolyazıkapa"],
   permLevel: 0,
   
 };
 
 exports.help = {
-  name: 'kapatdalinyazı', 
+  name: 'autorole message reset', 
   description: 'Slots oyunu oynar',
   usage: 'otorolmesajkapat'
 };

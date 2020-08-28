@@ -5,13 +5,13 @@ const db = require('quick.db');
 
 exports.run = async (client, message, args) => {
 if (!message.member.hasPermission("ADMINISTRATOR")){
-   message.channel.send("**Bu komutu kulanmaya yetkiniz yok!!**")
+   message.channel.send("**You need the Manage Server permission in order to change settings**")
   }else{
   let nesne = args[0]
-  if (!nesne) return message.channel.send('Kanal ayarlaması yapılamadı.')
+  if (!nesne) return message.channel.send('Channel tuning could not be done.')
     
   db.set(`giriscikis_${message.guild.id}`, nesne)
-   message.channel.send("Artık giriş çıkış mesajları " + nesne + " kanalına gönderilecek.")
+   message.channel.send("Now the I / O messages will be sent to the "+ object +" channel.")
   }   
  };
                                         
@@ -19,13 +19,13 @@ if (!message.member.hasPermission("ADMINISTRATOR")){
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: [],
+    aliases: ['girişçıkış'],
     permLevel: 0,
   
 }
 
 exports.help = {
-    name: 'girişçıkışayarla',
+    name: 'set in / out',
     description: 'Mod log kanalını ayarlar.',
     usage: 'mod-log-ayarla <#kanal>'
 }

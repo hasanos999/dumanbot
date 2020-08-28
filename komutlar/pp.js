@@ -8,7 +8,7 @@ exports.run = (client, message, params) => {
   .setColor("#36393F")
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .addField(':warning: Uyarı :warning:', '`sunucuresmi` adlı komutu özel mesajlarda kullanamazsın.')
+    .addField('You Cannot Use This Command In Private Messages')
     return message.author.sendEmbed(ozelmesajuyari); }
     if (message.channel.type !== 'dm') {
       const sunucubilgi = new Discord.RichEmbed()
@@ -24,7 +24,7 @@ exports.run = (client, message, params) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['sunucupp'],
+  aliases: ['server pp','ServerPP'],
   permLevel: 0,
   kategori: "kullanıcı"
 };

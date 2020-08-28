@@ -66,7 +66,7 @@ exports.run = async (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ['sayıtahmini', 'sayıtahmin', 'sayı-tahmini'],
+  aliases: ['sayıtahmin', 'sayı tahmin', 'sayı-tahmini','Sayı Tahmin'],
   permLevel: 0,
   kategori: "kullanıcı"
 };

@@ -6,9 +6,8 @@ exports.run = async (client, message, args) => {
     	let otorolkapat = JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
 		if(!sunucuyaözelayarlarOtorol[message.guild.id]) {
 			const embed = new Discord.RichEmbed()
-				.setDescription(`Otorolü Ayarlamadığın İçin Sıfırlayamazsın!`)
+				.setDescription(`Set Auto Role First`)
 				.setColor("RED")
-				.setTimestamp('Ayarlamak İçin +otorol @roladi')
 			message.channel.send({embed})
 			return
 		}
@@ -17,7 +16,7 @@ exports.run = async (client, message, args) => {
 			console.log(err)
 		})
 		const embed = new Discord.RichEmbed()
-			.setDescription(`Otorol Başarıyla Sıfırlandı`)
+			.setDescription(`Completed`)
 			.setColor("RANDOM")
 			.setTimestamp()
 		message.channel.send({embed})
@@ -34,7 +33,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'dalinrolsıfırla', 
+  name: 'autorole reset', 
   description: 'Slots oyunu oynar',
   usage: 'otorolkapat'
 };

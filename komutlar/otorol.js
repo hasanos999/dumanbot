@@ -7,12 +7,12 @@ exports.run = async (bot, message, args) =>
 {
   	let profil = JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
   var mentionedChannel = message.mentions.channels.first();
-  if (!mentionedChannel && args[0] !== "sıfırla") return message.channel.send("Ayarlamam İçin Bir Rol Etiketlemelisin. \nRolü Etiketleyemiyorsan **Rolün Etiketleme Seçeneğini Aktif Etmeyi Unutma** \nÖrnek Kullanım : +otorol @rol #kanal \n**Oto Yazı Kapatmak İstiyorsan +kapat otoyazı**");
+  if (!mentionedChannel && args[0] !== "reset") return message.channel.send("You Don't Tag A Role For Me To Set Up.");
   if (message.guild.member(message.author.id).hasPermission(0x8))
     
     {
       var mentionedRole = message.mentions.roles.first();
-      if (!mentionedRole) return message.channel.send("**Doğru Kullanım = /otorol @<roladı> #<metinkanalı>**".then(msg => msg.delete(5000)));
+      if (!mentionedRole) return message.channel.send("**Wrong use**".then(msg => msg.delete(5000)));
       
 
 	if(!profil[message.guild.id]){
@@ -33,7 +33,7 @@ exports.run = async (bot, message, args) =>
 	})
 
 	const embed = new Discord.RichEmbed()
-		.setDescription(`:white_check_mark: Otorol başarıyla ${args[0]} olarak ayarlandı! \nOtorol Mesaj kanalı başarıyla ${mentionedChannel} olarak ayarlandı.\n\nOto Mesaj'ı kapatabilmek için **+otomesajkapat** yazabilirsiniz!`)
+		.setDescription(`Completed`)
 		.setColor("RANDOM")
 		.setTimestamp()
 	message.channel.send({embed})
@@ -53,7 +53,7 @@ exports.conf =
 
 exports.help =
 {
-  name: 'dalinrol',
+  name: 'autorole',
   description: 'Sunucuya Girenlere Verilecek Olan Otorolü Ayarlar.',
   usage: 'otorolayarla'
 }

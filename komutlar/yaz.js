@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
   let mesaj = args.slice(0).join(' ');
-if (mesaj.length < 1) return message.reply('Yazmam için herhangi bir şey yazmalısın.');
+if (mesaj.length < 1) return message.reply('You have to write anything for me to write.');
   message.delete();
   message.channel.send(mesaj);
 };
@@ -10,7 +10,7 @@ if (mesaj.length < 1) return message.reply('Yazmam için herhangi bir şey yazma
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['say', 'söyle'],
+  aliases: ['say', 'söyle','write'],
   permLevel: 0,
 
 };
